@@ -1,6 +1,6 @@
 export class Tarefa {
   id: number;
-  titulo: string;
+  titulo?: string;
   descricao?: string;
   concluida: boolean;
 }
