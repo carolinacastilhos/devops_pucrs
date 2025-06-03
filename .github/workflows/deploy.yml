@@ -1,6 +1,6 @@
 name: CI Pipeline
 
-# Disparo do workflow em push ou PR na main
+# Disparo do workflow em push ou pull request na main
 on:
   push:
     branches: [main]
