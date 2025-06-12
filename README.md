@@ -34,10 +34,3 @@ A segunda fase expandirá o pipeline da Fase 1, incluindo **Entrega Contínua (C
   - Configuração de Security Groups e controle de acesso na AWS  
 - **📊 Relatório Final**, detalhando todas as **etapas do projeto** e a **análise dos resultados**.  
 
----
-
-## 🔥 Como Executar o Projeto?  
-1. **Clone o repositório**:  
-   ```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   cd seu-projeto
