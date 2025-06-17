@@ -1,15 +1,15 @@
 provider "aws" {
-  region = "us-east-1"  
+  region = var.aws_region 
 }
 
 resource "aws_instance" "nestjs_api" {
-  ami           = "ami-084568db4383264d4"  
-  instance_type = "t2.micro"  
+  ami           = var.ami_id  
+  instance_type = var.instance_type  
 
-  key_name = "devops-key"  
+  key_name = var.key_name 
   
-  vpc_security_group_ids = ["sg-0495cfe6a494275d2"]  
-  subnet_id              = "subnet-025aa303ee8b1885a"  
+  vpc_security_group_ids = [var.security_group_id]  
+  subnet_id              = var.subnet_id  
 
   tags = {
     Name = "nestjs-api-instance"
