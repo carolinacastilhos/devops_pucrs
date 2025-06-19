@@ -99,3 +99,18 @@ jobs:
      # 8. Aplicar infraestrutura com Terraform (Provisionamento EC2)
       - name: Terraform Apply
         run: terraform apply -auto-approve
+
+     # 9. Acessar EC2 via SSH e fazer deploy com Docker Compose
+      - name: Deploy Docker EC2
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ~/devops_pucrs
+            git pull origin main
+            docker-compose down || true
+            docker-compose up --build -d
+  
+  
