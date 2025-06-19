@@ -1,0 +1,19 @@
+name: Stop Application on EC2
+
+# Será executado quando clicar manualmente em "Run workflow" no GitHub Actions
+on:
+  workflow_dispatch:
+
+jobs:
+  stop-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stop Docker container in EC2
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ~/devops_pucrs
+            docker-compose down
